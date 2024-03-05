@@ -9,7 +9,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class Team {
 
@@ -22,10 +27,6 @@ public class Team {
 	@OneToMany(mappedBy = "team")
 	private List<Member> members = new ArrayList<>();
 
-	protected Team() {
-
-	}
-
 	public Team(String name) {
 		this.name = name;
 	}
@@ -35,15 +36,4 @@ public class Team {
 		member.setTeam(this);
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public List<Member> getMembers() {
-		return members;
-	}
 }

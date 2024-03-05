@@ -12,16 +12,15 @@ import inflearn.study.company.domain.team.Team;
 import inflearn.study.company.domain.team.TeamRepository;
 import inflearn.study.company.dto.request.member.MemberCreateRequest;
 import inflearn.study.company.dto.response.member.MemberReadResponse;
+import lombok.RequiredArgsConstructor;
 
+@Transactional(readOnly = true)
+@RequiredArgsConstructor
 @Service
 public class MemberService {
 	private final MemberRepository memberRepository;
 	private final TeamRepository teamRepository;
 
-	public MemberService(MemberRepository memberRepository, TeamRepository teamRepository) {
-		this.memberRepository = memberRepository;
-		this.teamRepository = teamRepository;
-	}
 
 	@Transactional
 	public void createMember(MemberCreateRequest request) {
@@ -36,7 +35,6 @@ public class MemberService {
 		memberRepository.save(member);
 	}
 
-	@Transactional(readOnly = true)
 	public List<MemberReadResponse> getAllMembers() {
 		List<Member> members = memberRepository.findAll();
 

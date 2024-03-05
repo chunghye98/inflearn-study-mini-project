@@ -4,7 +4,9 @@ import java.time.LocalDate;
 
 import inflearn.study.company.domain.member.Member;
 import inflearn.study.company.domain.member.Role;
+import lombok.Getter;
 
+@Getter
 public class MemberReadResponse {
 
 	private String name;
@@ -19,25 +21,5 @@ public class MemberReadResponse {
 		this.role = member.getRole();
 		this.birthday = member.getBirthday();
 		this.workStartDate = member.getWorkStartDate();
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getTeamName() {
-		return teamName;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-
-	public LocalDate getWorkStartDate() {
-		return workStartDate;
 	}
 }

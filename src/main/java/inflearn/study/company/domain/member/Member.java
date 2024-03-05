@@ -12,7 +12,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class Member {
 
@@ -26,14 +31,12 @@ public class Member {
 	private Role role;
 
 	private LocalDate birthday;
+
 	private LocalDate workStartDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "team_id")
 	private Team team;
-
-	public Member() {
-	}
 
 	public Member(String name, boolean isManager, LocalDate birthday, LocalDate workStartDate) {
 		this.name = name;
@@ -46,27 +49,4 @@ public class Member {
 		this.team = team;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-
-	public LocalDate getWorkStartDate() {
-		return workStartDate;
-	}
-
-	public Team getTeam() {
-		return team;
-	}
 }

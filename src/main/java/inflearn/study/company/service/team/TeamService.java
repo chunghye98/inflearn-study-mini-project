@@ -1,6 +1,5 @@
 package inflearn.study.company.service.team;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

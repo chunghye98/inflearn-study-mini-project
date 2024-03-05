@@ -10,15 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import inflearn.study.company.dto.response.team.TeamReadResponse;
 import inflearn.study.company.dto.request.team.TeamCreateRequest;
 import inflearn.study.company.service.team.TeamService;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @RestController
 public class TeamController {
 
 	private final TeamService teamService;
-
-	public TeamController(TeamService teamService) {
-		this.teamService = teamService;
-	}
 
 	/**
 	 * 팀 등록

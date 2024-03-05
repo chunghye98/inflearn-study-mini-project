@@ -1,7 +1,9 @@
 package inflearn.study.company.dto.response.team;
 
 import inflearn.study.company.domain.team.Team;
+import lombok.Getter;
 
+@Getter
 public class TeamReadResponse {
 
 	private String name;
@@ -12,17 +14,5 @@ public class TeamReadResponse {
 		this.name = team.getName();
 		this.manager = manager;
 		this.memberCount = memberCount;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getManager() {
-		return manager;
-	}
-
-	public long getMemberCount() {
-		return memberCount;
 	}
 }

@@ -10,15 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import inflearn.study.company.dto.request.member.MemberCreateRequest;
 import inflearn.study.company.dto.response.member.MemberReadResponse;
 import inflearn.study.company.service.member.MemberService;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @RestController
 public class MemberController {
 
 	private final MemberService memberService;
-
-	public MemberController(MemberService memberService) {
-		this.memberService = memberService;
-	}
 
 	/**
 	 * 직원 등록
