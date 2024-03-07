@@ -28,7 +28,7 @@ public class TeamController {
 	}
 
 	/**
-	 * 팀 조회 기능
+	 * 팀 조회
 	 * @return
 	 */
 	@GetMapping("/team")

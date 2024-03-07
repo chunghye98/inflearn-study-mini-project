@@ -44,6 +44,80 @@
         }, ...
     ]
     ```
+## API 명세서
+### 직원 등록
+`POST /member`    
+
+__Request Body__ 
+```json
+{
+  "name" : "sio1",
+  "isManager" : false,
+  "birthday" : "1900-01-01",
+  "workStateDate" : "2024-03-07" 
+}
+```
+__Response Body__
+
+200 OK
+
+### 직원 조회
+`GET /member`
+
+__Response Body__
+```json
+[
+    {
+        "name": "sio5",
+        "teamName": "토트넘",
+        "role": "MEMBER",
+        "birthday": "1998-12-26",
+        "workStartDate": "2024-01-01"
+    },
+    {
+        "name": "sio6",
+        "teamName": "토트넘",
+        "role": "MEMBER",
+        "birthday": "1998-12-26",
+        "workStartDate": "2024-01-01"
+    },...
+]
+```
+
+### 팀 등록
+`POST /team`
+
+__Request Body__
+```json
+{
+  "name" : "아스날"
+}
+```
+
+__Response Body__
+
+200 OK
+
+### 팀 조회
+`GET /team`
+
+__Response Body__
+```json
+[
+    {
+        "name": "아스날",
+        "manager": "sio4",
+        "memberCount": 5
+    },
+    {
+        "name": "토트넘",
+        "manager": "sio7",
+        "memberCount": 4
+    }
+]
+```
+
+
 ## 프로젝트 진행 과정
 [프로젝트 최소 설정, 테이블 설계 및 DB 연결 확인](https://github.com/chunghye98/inflearn_spring_study/blob/main/study/day09.md)    
 구현 내용은 코드에서 확인 가능하다
